@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #8B3232;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background-color: white;
+    border-radius: 10px;
+    width: 400px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .question-box {
+    background-color: black;
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+  }
+  
+  .question {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .answers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .answer {
+    background-color: #ddd;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .answer:hover {
+    background-color: #bbb;
+  }
+  /* Gaya pop-up */
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px); /* Mengaplikasikan efek blur */
+    -webkit-backdrop-filter: blur(10px); /* Kompatibilitas untuk Safari */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+  }
+  
+  /* Define the shake animation */
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translatey(10px);
+    }
+    75% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translatey(0);
+    }
+  }
+  
+  .popup-content {
+    background: linear-gradient(to bottom, #e3342f, #ffffff); /* Merah-Putih */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    color: white;
+    font-family: 'Merriweather', serif;
+    position: relative;
+    animation: shake 4s ease-in-out  infinite; 
+  }
+  
+  .popup-content h2 {
+    color: #f8f9fa;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .popup-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #f8f9fa;
+  }
+  
+  .popup-content img {
+    width: 200px;
+    margin: 10px 0;
+    border-radius: 20px;
+  }
+  
+  .popup-content button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #d62d20;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .popup-content button:hover {
+    background-color: #b2221b;
+  }
+  
+  .popup-header {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #d62d20;
+    padding: 5px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  

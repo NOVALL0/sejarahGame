@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuis</title>
+  <link rel="stylesheet" href="choce.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="status">
+        <span>Nyawa ❤️❤️❤️</span>
+      </div>
+      <div class="time">
+        <span>Waktu 4:57</span>
+      </div>
+      <div class="number">
+        <span>Nomor 1/10</span>
+      </div>
+    </div>
+    <div class="question-box">
+      <div class="question">
+        Pertanyaan
+      </div>
+      <div class="answers">
+        <button class="answer">Jawaban 1</button>
+        <button class="answer">Jawaban 2</button>
+        <button class="answer">Jawaban 3</button>
+        <button class="answer">Jawaban 4</button>
+      </div>
+    </div>
+  </div>
+  
+ <script>
+    // Daftar soal dan jawaban
+    const questions = [
+    {
+      question: "Kapan Perang Aceh dimulai?",
+      answers: ["1824", "1873", "1880", "1904"],
+      correct: 1
+    },
+    {
+      question: "Siapa pemimpin utama rakyat Aceh dalam melawan Belanda?",
+      answers: ["Teuku Umar", "Cut Nyak Dien", "Panglima Polim", "Semua jawaban benar"],
+      correct: 3
+    },
+    {
+      question: "Apa alasan utama Perang Aceh meletus?",
+      answers: ["Kehadiran pasukan Jepang", "Campur tangan Belanda dalam politik Aceh", "Perang saudara di Aceh", "Kerjasama Aceh dengan Inggris"],
+      correct: 1
+    },
+    {
+      question: "Siapa pemimpin Belanda pada awal Perang Aceh?",
+      answers: ["Van Swieten", "J.B. van Heutsz", "Karel van der Heyden", "Major General Köhler"],
+      correct: 3
+    },
+    {
+      question: "Apa nama perjanjian yang melibatkan Aceh sebelum Perang Aceh dimulai?",
+      answers: ["Perjanjian Giyanti", "Traktat London 1824", "Perjanjian Bongaya", "Perjanjian Tuntang"],
+      correct: 1
+    },
+    {
+      question: "Siapa tokoh wanita yang menjadi simbol perjuangan rakyat Aceh?",
+      answers: ["R.A. Kartini", "Martha Christina Tiahahu", "Cut Nyak Dien", "Dewi Sartika"],
+      correct: 2
+    },
+    {
+      question: "Apa strategi utama Belanda untuk menaklukkan Aceh?",
+      answers: ["Blokade laut", "Pembangunan Benteng Marlborough", "Strategi Benteng Stelsel", "Strategi Konsentrasi"],
+      correct: 3
+    },
+    {
+      question: "Kapan Teuku Umar gugur dalam perjuangan melawan Belanda?",
+      answers: ["1896", "1899", "1903", "1910"],
+      correct: 1
+    },
+    {
+      question: "Apa nama karya penting tentang Aceh yang ditulis oleh Snouck Hurgronje?",
+      answers: ["Atjeh Verslag", "De Atjehers", "Aceh dan Belanda", "Aceh Sepanjang Sejarah"],
+      correct: 1
+    },
+    {
+      question: "Apa dampak jangka panjang dari Perang Aceh terhadap rakyat Aceh?",
+      answers: ["Kehancuran ekonomi", "Hilangnya kebudayaan lokal", "Korban jiwa besar-besaran", "Semua jawaban benar"],
+      correct: 3
+    }
+  ];
+  
+
+ 
+let currentQuestionIndex = 0;
+let lives = 3;
+let score = 0; // Tambahkan variabel score
+let timer = 180; // Waktu dalam detik
+
+// Referensi elemen HTML
+const questionElement = document.querySelector(".question");
+const answerButtons = document.querySelectorAll(".answer");
+const livesElement = document.querySelector(".status span");
+const timeElement = document.querySelector(".time span");
+const numberElement = document.querySelector(".number span");
+
+// Fungsi untuk memuat soal
+function loadQuestion() {
+  const currentQuestion = questions[currentQuestionIndex];
+  questionElement.textContent = currentQuestion.question;
+
+  answerButtons.forEach((button, index) => {
+    button.textContent = currentQuestion.answers[index];
+    button.dataset.index = index;
+    button.style.backgroundColor = ""; // Reset warna tombol
+    button.onclick = () => checkAnswer(index);
+  });
+
+  numberElement.textContent = `${currentQuestionIndex + 1}/${questions.length}`;
+}
+
+// Fungsi untuk memeriksa jawaban
+function checkAnswer(selectedIndex) {
+  const currentQuestion = questions[currentQuestionIndex];
+
+  if (selectedIndex === currentQuestion.correct) {
+    answerButtons[selectedIndex].style.backgroundColor = "green"; // Jawaban benar
+    score += 10; // Tambahkan 10 ke skor jika jawabannya benar
+  } else {
+    answerButtons[selectedIndex].style.backgroundColor = "red"; // Jawaban salah
+    lives--;
+    updateLives();
+
+    if (lives === 0) {
+      endGame("Kamu gagal! Nyawamu habis.");
+      return;
+    }
+  }
+
+  setTimeout(() => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+      loadQuestion();
+    } else {
+      endGame("Kamu menjawab semua soal 🤗.");
+    }
+  }, 1000);
+}
+
+// Fungsi untuk memperbarui nyawa di tampilan
+function updateLives() {
+  livesElement.textContent = "❤️".repeat(lives);
+}
+
+// Fungsi untuk menangani akhir permainan
+function endGame(message) {
+  showPopup(message); // Tampilkan pop-up
+}
+
+// Fungsi untuk memperbarui waktu
+function updateTimer() {
+  timer--;
+  timeElement.textContent = `Waktu ${Math.max(timer, 0)}`;
+
+  if (timer === 0) {
+    endGame("Kamu gagal! Waktumu habis.");
+  }
+}
+
+// Fungsi untuk menampilkan pop-up
+function showPopup(message) {
+  const popup = document.createElement("div");
+  popup.className = "popup";
+
+  popup.innerHTML = `
+    <div class="popup-content">
+      <p>${message}</p>
+      <h2>Skor Kamu: ${score}</h2> 
+      <h1>Perang maluku</h1>
+      <img src="/aset/maluku.jpg" alt="Bendera Indonesia" class="popup-image" /> <br>
+      <button id="backToDashboard">Kembali ke Dashboard</button>
+       <audio id="popup-audio" autoplay>
+        <source src="/aset/gun.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  `;
+
+  document.body.appendChild(popup);
+
+  const audio = document.getElementById("popup-audio");
+  audio.play();
+
+  const backButton = document.getElementById("backToDashboard");
+  backButton.onclick = () => {
+    window.location.href = "/landingpage/index.html"; // Ganti "dashboard.html" sesuai URL dashboard Anda
+  };
+}
+
+// Inisialisasi permainan
+function startGame() {
+  loadQuestion();
+  updateLives();
+  timeElement.textContent = `Waktu ${timer}`;
+  setInterval(updateTimer, 1000);
+}
+
+// Mulai permainan
+startGame();
+
+  
+
+
+ </script>
+</body>
+</html>
