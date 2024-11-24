@@ -36,57 +36,87 @@
     // Daftar soal dan jawaban
     const questions = [
     {
-      question: "Kapan Perang Aceh dimulai?",
-      answers: ["1824", "1873", "1880", "1904"],
-      correct: 1
+      question: "Apa arti kata *Puputan* dalam bahasa Bali?",
+      answers: ["Pertempuran habis-habisan", "Kemenangan gemilang", "Pengorbanan suci", "Perundingan damai"],
+      correct: 0
     },
     {
-      question: "Siapa pemimpin utama rakyat Aceh dalam melawan Belanda?",
-      answers: ["Teuku Umar", "Cut Nyak Dien", "Panglima Polim", "Semua jawaban benar"],
+      question: "Pada tahun berapa Puputan Badung terjadi?",
+      answers: ["1906", "1912", "1894", "1908"],
+      correct: 0
+    },
+    {
+      question: "Apa penyebab utama terjadinya *Puputan Badung*?",
+      answers: [
+        "Penolakan Raja Badung terhadap pajak dan perintah Belanda",
+        "Konflik internal di Kerajaan Badung",
+        "Serangan kerajaan tetangga",
+        "Perebutan wilayah perdagangan"
+      ],
+      correct: 0
+    },
+    {
+      question: "Siapa yang memimpin rakyat dalam *Puputan Badung*?",
+      answers: [
+        "Raja Badung beserta keluarga kerajaan",
+        "Prajurit dari Jawa",
+        "Pasukan gabungan kerajaan Bali",
+        "Pemimpin rakyat biasa"
+      ],
+      correct: 0
+    },
+    {
+      question: "Apa ciri khas strategi *Puputan* dalam perlawanan terhadap penjajah?",
+      answers: [
+        "Perlawanan sampai titik darah penghabisan",
+        "Diplomasi dengan pihak penjajah",
+        "Serangan mendadak",
+        "Penggunaan senjata modern"
+      ],
+      correct: 0
+    },
+    {
+      question: "Apa yang dilakukan rakyat Bali dalam *Puputan* ketika menghadapi Belanda?",
+      answers: [
+        "Melawan hingga mati dengan senjata tradisional",
+        "Menyerah kepada Belanda",
+        "Melakukan perundingan damai",
+        "Mengungsi ke daerah lain"
+      ],
+      correct: 0
+    },
+    {
+      question: "Selain di Badung, di mana lagi terjadi peristiwa *Puputan* yang terkenal?",
+      answers: ["Klungkung", "Ubud", "Tabanan", "Buleleng"],
+      correct: 0
+    },
+    {
+      question: "Pada tahun berapa *Puputan Klungkung* terjadi?",
+      answers: ["1908", "1906", "1910", "1894"],
+      correct: 0
+    },
+    {
+      question: "Apa dampak dari peristiwa *Puputan* bagi masyarakat Bali?",
+      answers: [
+        "Kehilangan banyak nyawa bangsawan dan rakyat",
+        "Keruntuhan kerajaan Bali",
+        "Peningkatan pengaruh kolonial Belanda",
+        "Semua jawaban benar"
+      ],
       correct: 3
     },
     {
-      question: "Apa alasan utama Perang Aceh meletus?",
-      answers: ["Kehadiran pasukan Jepang", "Campur tangan Belanda dalam politik Aceh", "Perang saudara di Aceh", "Kerjasama Aceh dengan Inggris"],
-      correct: 1
-    },
-    {
-      question: "Siapa pemimpin Belanda pada awal Perang Aceh?",
-      answers: ["Van Swieten", "J.B. van Heutsz", "Karel van der Heyden", "Major General Köhler"],
-      correct: 3
-    },
-    {
-      question: "Apa nama perjanjian yang melibatkan Aceh sebelum Perang Aceh dimulai?",
-      answers: ["Perjanjian Giyanti", "Traktat London 1824", "Perjanjian Bongaya", "Perjanjian Tuntang"],
-      correct: 1
-    },
-    {
-      question: "Siapa tokoh wanita yang menjadi simbol perjuangan rakyat Aceh?",
-      answers: ["R.A. Kartini", "Martha Christina Tiahahu", "Cut Nyak Dien", "Dewi Sartika"],
-      correct: 2
-    },
-    {
-      question: "Apa strategi utama Belanda untuk menaklukkan Aceh?",
-      answers: ["Blokade laut", "Pembangunan Benteng Marlborough", "Strategi Benteng Stelsel", "Strategi Konsentrasi"],
-      correct: 3
-    },
-    {
-      question: "Kapan Teuku Umar gugur dalam perjuangan melawan Belanda?",
-      answers: ["1896", "1899", "1903", "1910"],
-      correct: 1
-    },
-    {
-      question: "Apa nama karya penting tentang Aceh yang ditulis oleh Snouck Hurgronje?",
-      answers: ["Atjeh Verslag", "De Atjehers", "Aceh dan Belanda", "Aceh Sepanjang Sejarah"],
-      correct: 1
-    },
-    {
-      question: "Apa dampak jangka panjang dari Perang Aceh terhadap rakyat Aceh?",
-      answers: ["Kehancuran ekonomi", "Hilangnya kebudayaan lokal", "Korban jiwa besar-besaran", "Semua jawaban benar"],
+      question: "Apa yang menjadi simbol keberanian rakyat Bali dalam *Puputan*?",
+      answers: [
+        "Tidak menyerah meski kalah jumlah",
+        "Pengorbanan hingga mati demi kehormatan",
+        "Melawan penjajah dengan senjata tradisional",
+        "Semua jawaban benar"
+      ],
       correct: 3
     }
   ];
-   
+  
 
  
 let currentQuestionIndex = 0;
@@ -173,8 +203,8 @@ function showPopup(message) {
     <div class="popup-content">
       <p>${message}</p>
       <h2>Skor Kamu: ${score}</h2> 
-      <h1>Perang Aceh</h1>
-      <img src="/Aset/aceh.jpg" alt="Bendera Indonesia" class="popup-image" /> <br>
+      <h1>Perang Puputan</h1>
+      <img src="/Aset/pupuran.jpg" alt="Bendera Indonesia" class="popup-image" /> <br>
       <button id="backToDashboard">Kembali ke Dashboard</button>
        <audio id="popup-audio" autoplay>
         <source src="/Aset/gun.mp3" type="audio/mpeg">

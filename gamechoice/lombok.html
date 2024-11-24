@@ -36,56 +36,72 @@
     // Daftar soal dan jawaban
     const questions = [
     {
-      question: "Kapan Perang Aceh dimulai?",
-      answers: ["1824", "1873", "1880", "1904"],
-      correct: 1
+      question: "Kapan Perang Lombok dimulai?",
+      answers: ["1894", "1904", "1880", "1912"],
+      correct: 0
     },
     {
-      question: "Siapa pemimpin utama rakyat Aceh dalam melawan Belanda?",
-      answers: ["Teuku Umar", "Cut Nyak Dien", "Panglima Polim", "Semua jawaban benar"],
-      correct: 3
-    },
-    {
-      question: "Apa alasan utama Perang Aceh meletus?",
-      answers: ["Kehadiran pasukan Jepang", "Campur tangan Belanda dalam politik Aceh", "Perang saudara di Aceh", "Kerjasama Aceh dengan Inggris"],
-      correct: 1
-    },
-    {
-      question: "Siapa pemimpin Belanda pada awal Perang Aceh?",
-      answers: ["Van Swieten", "J.B. van Heutsz", "Karel van der Heyden", "Major General Köhler"],
-      correct: 3
-    },
-    {
-      question: "Apa nama perjanjian yang melibatkan Aceh sebelum Perang Aceh dimulai?",
-      answers: ["Perjanjian Giyanti", "Traktat London 1824", "Perjanjian Bongaya", "Perjanjian Tuntang"],
-      correct: 1
-    },
-    {
-      question: "Siapa tokoh wanita yang menjadi simbol perjuangan rakyat Aceh?",
-      answers: ["R.A. Kartini", "Martha Christina Tiahahu", "Cut Nyak Dien", "Dewi Sartika"],
+      question: "Siapa pemimpin utama pasukan Kerajaan Mataram di Lombok?",
+      answers: ["Raja Gowa", "Raja Bali", "Anak Agung Gde Ngurah", "Raja Lombok"],
       correct: 2
     },
     {
-      question: "Apa strategi utama Belanda untuk menaklukkan Aceh?",
-      answers: ["Blokade laut", "Pembangunan Benteng Marlborough", "Strategi Benteng Stelsel", "Strategi Konsentrasi"],
+      question: "Apa penyebab utama pecahnya Perang Lombok?",
+      answers: [
+        "Perselisihan internal Kerajaan Mataram",
+        "Campur tangan Belanda dalam urusan kerajaan",
+        "Perjanjian yang dilanggar oleh Kerajaan Mataram",
+        "Serangan pasukan Inggris"
+      ],
+      correct: 1
+    },
+    {
+      question: "Siapa yang membantu Belanda dalam Perang Lombok?",
+      answers: ["Pasukan Bugis", "Pasukan Bali", "Pasukan Aceh", "Pasukan lokal dari Sasak"],
       correct: 3
     },
     {
-      question: "Kapan Teuku Umar gugur dalam perjuangan melawan Belanda?",
-      answers: ["1896", "1899", "1903", "1910"],
+      question: "Pada tahun berapa Kerajaan Mataram di Lombok jatuh ke tangan Belanda?",
+      answers: ["1894", "1896", "1900", "1888"],
+      correct: 0
+    },
+    {
+      question: "Apa nama benteng pertahanan utama Kerajaan Mataram di Lombok?",
+      answers: ["Benteng Somba Opu", "Benteng Bali", "Benteng Cakranegara", "Benteng Rinjani"],
+      correct: 2
+    },
+    {
+      question: "Apa alasan Belanda ingin menguasai Lombok?",
+      answers: [
+        "Mengamankan jalur perdagangan di Indonesia",
+        "Kekayaan alam yang melimpah",
+        "Melemahkan kekuasaan kerajaan lokal",
+        "Semua jawaban benar"
+      ],
+      correct: 3
+    },
+    {
+      question: "Siapa yang menyerah pada Belanda dalam Perang Lombok?",
+      answers: ["Raja Lombok", "Anak Agung Made Karangasem", "Prajurit Sasak", "Semua pihak"],
       correct: 1
     },
     {
-      question: "Apa nama karya penting tentang Aceh yang ditulis oleh Snouck Hurgronje?",
-      answers: ["Atjeh Verslag", "De Atjehers", "Aceh dan Belanda", "Aceh Sepanjang Sejarah"],
-      correct: 1
+      question: "Apa dampak utama dari Perang Lombok bagi rakyat lokal?",
+      answers: [
+        "Kehancuran ekonomi dan sosial",
+        "Kemerdekaan rakyat Sasak",
+        "Pengembangan infrastruktur baru",
+        "Pemberontakan besar-besaran"
+      ],
+      correct: 0
     },
     {
-      question: "Apa dampak jangka panjang dari Perang Aceh terhadap rakyat Aceh?",
-      answers: ["Kehancuran ekonomi", "Hilangnya kebudayaan lokal", "Korban jiwa besar-besaran", "Semua jawaban benar"],
+      question: "Apa nama perjanjian yang menjadi akhir dari Perang Lombok?",
+      answers: ["Perjanjian Cakranegara", "Perjanjian Lombok", "Perjanjian Bali-Lombok", "Tidak ada perjanjian resmi"],
       correct: 3
     }
   ];
+  
    
 
  
@@ -173,8 +189,8 @@ function showPopup(message) {
     <div class="popup-content">
       <p>${message}</p>
       <h2>Skor Kamu: ${score}</h2> 
-      <h1>Perang Aceh</h1>
-      <img src="/Aset/aceh.jpg" alt="Bendera Indonesia" class="popup-image" /> <br>
+      <h1>Perang Lombok</h1>
+      <img src="/Aset/lombok.jpg" alt="Bendera Indonesia" class="popup-image" /> <br>
       <button id="backToDashboard">Kembali ke Dashboard</button>
        <audio id="popup-audio" autoplay>
         <source src="/Aset/gun.mp3" type="audio/mpeg">

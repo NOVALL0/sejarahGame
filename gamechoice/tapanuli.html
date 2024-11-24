@@ -36,57 +36,97 @@
     // Daftar soal dan jawaban
     const questions = [
     {
-      question: "Kapan Perang Aceh dimulai?",
-      answers: ["1824", "1873", "1880", "1904"],
-      correct: 1
+      question: "Siapakah tokoh utama dalam Perang Tapanuli?",
+      answers: [
+        "Raja Sisingamangaraja XII",
+        "Tuanku Imam Bonjol",
+        "Pangeran Diponegoro",
+        "Pattimura"
+      ],
+      correct: 0
     },
     {
-      question: "Siapa pemimpin utama rakyat Aceh dalam melawan Belanda?",
-      answers: ["Teuku Umar", "Cut Nyak Dien", "Panglima Polim", "Semua jawaban benar"],
+      question: "Kapan Perang Tapanuli dimulai?",
+      answers: ["1878", "1883", "1894", "1907"],
+      correct: 0
+    },
+    {
+      question: "Apa tujuan utama Raja Sisingamangaraja XII dalam Perang Tapanuli?",
+      answers: [
+        "Melawan penjajahan Belanda",
+        "Memperluas wilayah kerajaan",
+        "Mendukung perdagangan internasional",
+        "Menguasai tambang emas di Sumatra"
+      ],
+      correct: 0
+    },
+    {
+      question: "Apa strategi yang digunakan oleh Raja Sisingamangaraja XII dalam melawan Belanda?",
+      answers: [
+        "Perang gerilya",
+        "Serangan frontal",
+        "Blokade ekonomi",
+        "Aliansi dengan negara asing"
+      ],
+      correct: 0
+    },
+    {
+      question: "Di wilayah mana Perang Tapanuli berlangsung?",
+      answers: [
+        "Sumatra Utara",
+        "Sumatra Barat",
+        "Aceh",
+        "Sumatra Selatan"
+      ],
+      correct: 0
+    },
+    {
+      question: "Apa penyebab utama terjadinya Perang Tapanuli?",
+      answers: [
+        "Ekspansi Belanda ke wilayah Tapanuli",
+        "Konflik internal kerajaan",
+        "Perlawanan terhadap monopoli dagang",
+        "Serangan dari kerajaan tetangga"
+      ],
+      correct: 0
+    },
+    {
+      question: "Pada tahun berapa Raja Sisingamangaraja XII gugur dalam pertempuran?",
+      answers: ["1907", "1900", "1896", "1910"],
+      correct: 0
+    },
+    {
+      question: "Siapa yang dianggap sebagai pengkhianat dalam Perang Tapanuli?",
+      answers: [
+        "Raja lokal yang berpihak pada Belanda",
+        "Pasukan luar negeri",
+        "Kaum adat yang netral",
+        "Tidak ada pengkhianatan"
+      ],
+      correct: 0
+    },
+    {
+      question: "Apa dampak dari Perang Tapanuli bagi rakyat Batak?",
+      answers: [
+        "Kehilangan pemimpin besar",
+        "Penguasaan wilayah oleh Belanda",
+        "Perubahan sistem pemerintahan lokal",
+        "Semua jawaban benar"
+      ],
       correct: 3
     },
     {
-      question: "Apa alasan utama Perang Aceh meletus?",
-      answers: ["Kehadiran pasukan Jepang", "Campur tangan Belanda dalam politik Aceh", "Perang saudara di Aceh", "Kerjasama Aceh dengan Inggris"],
-      correct: 1
-    },
-    {
-      question: "Siapa pemimpin Belanda pada awal Perang Aceh?",
-      answers: ["Van Swieten", "J.B. van Heutsz", "Karel van der Heyden", "Major General Köhler"],
-      correct: 3
-    },
-    {
-      question: "Apa nama perjanjian yang melibatkan Aceh sebelum Perang Aceh dimulai?",
-      answers: ["Perjanjian Giyanti", "Traktat London 1824", "Perjanjian Bongaya", "Perjanjian Tuntang"],
-      correct: 1
-    },
-    {
-      question: "Siapa tokoh wanita yang menjadi simbol perjuangan rakyat Aceh?",
-      answers: ["R.A. Kartini", "Martha Christina Tiahahu", "Cut Nyak Dien", "Dewi Sartika"],
-      correct: 2
-    },
-    {
-      question: "Apa strategi utama Belanda untuk menaklukkan Aceh?",
-      answers: ["Blokade laut", "Pembangunan Benteng Marlborough", "Strategi Benteng Stelsel", "Strategi Konsentrasi"],
-      correct: 3
-    },
-    {
-      question: "Kapan Teuku Umar gugur dalam perjuangan melawan Belanda?",
-      answers: ["1896", "1899", "1903", "1910"],
-      correct: 1
-    },
-    {
-      question: "Apa nama karya penting tentang Aceh yang ditulis oleh Snouck Hurgronje?",
-      answers: ["Atjeh Verslag", "De Atjehers", "Aceh dan Belanda", "Aceh Sepanjang Sejarah"],
-      correct: 1
-    },
-    {
-      question: "Apa dampak jangka panjang dari Perang Aceh terhadap rakyat Aceh?",
-      answers: ["Kehancuran ekonomi", "Hilangnya kebudayaan lokal", "Korban jiwa besar-besaran", "Semua jawaban benar"],
-      correct: 3
+      question: "Apa bentuk penghormatan Indonesia kepada Raja Sisingamangaraja XII?",
+      answers: [
+        "Dianugerahi gelar Pahlawan Nasional",
+        "Pembangunan museum peringatan",
+        "Penerbitan mata uang khusus",
+        "Semua jawaban benar"
+      ],
+      correct: 0
     }
   ];
-   
+  
 
  
 let currentQuestionIndex = 0;
@@ -173,8 +213,8 @@ function showPopup(message) {
     <div class="popup-content">
       <p>${message}</p>
       <h2>Skor Kamu: ${score}</h2> 
-      <h1>Perang Aceh</h1>
-      <img src="/Aset/aceh.jpg" alt="Bendera Indonesia" class="popup-image" /> <br>
+      <h1>Perang Tapanuli</h1>
+      <img src="/Aset/tapanuli.jpg" alt="Bendera Indonesia" class="popup-image" /> <br>
       <button id="backToDashboard">Kembali ke Dashboard</button>
        <audio id="popup-audio" autoplay>
         <source src="/Aset/gun.mp3" type="audio/mpeg">

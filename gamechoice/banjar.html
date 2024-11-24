@@ -36,58 +36,77 @@
     // Daftar soal dan jawaban
     const questions = [
     {
-      question: "Kapan Perang Aceh dimulai?",
-      answers: ["1824", "1873", "1880", "1904"],
-      correct: 1
+      question: "Kapan Perang Banjar dimulai?",
+      answers: ["1859", "1825", "1865", "1880"],
+      correct: 0
     },
     {
-      question: "Siapa pemimpin utama rakyat Aceh dalam melawan Belanda?",
-      answers: ["Teuku Umar", "Cut Nyak Dien", "Panglima Polim", "Semua jawaban benar"],
+      question: "Siapakah tokoh utama yang memimpin Perang Banjar?",
+      answers: ["Pangeran Antasari", "Tuanku Imam Bonjol", "Diponegoro", "Pangeran Dipati"],
+      correct: 0
+    },
+    {
+      question: "Apa penyebab utama terjadinya Perang Banjar?",
+      answers: [
+        "Campur tangan Belanda dalam pergantian takhta",
+        "Kenaikan pajak oleh pemerintah kolonial",
+        "Konflik agama di Kerajaan Banjar",
+        "Ekspansi kerajaan tetangga"
+      ],
+      correct: 0
+    },
+    {
+      question: "Apa tujuan utama Belanda dalam Perang Banjar?",
+      answers: [
+        "Menguasai tambang batu bara di Kalimantan",
+        "Mendukung raja lokal yang setia kepada mereka",
+        "Memperluas pengaruh di Kalimantan",
+        "Semua jawaban benar"
+      ],
       correct: 3
     },
     {
-      question: "Apa alasan utama Perang Aceh meletus?",
-      answers: ["Kehadiran pasukan Jepang", "Campur tangan Belanda dalam politik Aceh", "Perang saudara di Aceh", "Kerjasama Aceh dengan Inggris"],
-      correct: 1
-    },
-    {
-      question: "Siapa pemimpin Belanda pada awal Perang Aceh?",
-      answers: ["Van Swieten", "J.B. van Heutsz", "Karel van der Heyden", "Major General Köhler"],
-      correct: 3
-    },
-    {
-      question: "Apa nama perjanjian yang melibatkan Aceh sebelum Perang Aceh dimulai?",
-      answers: ["Perjanjian Giyanti", "Traktat London 1824", "Perjanjian Bongaya", "Perjanjian Tuntang"],
-      correct: 1
-    },
-    {
-      question: "Siapa tokoh wanita yang menjadi simbol perjuangan rakyat Aceh?",
-      answers: ["R.A. Kartini", "Martha Christina Tiahahu", "Cut Nyak Dien", "Dewi Sartika"],
+      question: "Pada tahun berapa Pangeran Antasari dianugerahi gelar *Panembahan Amiruddin Khalifatul Mukminin*?",
+      answers: ["1862", "1859", "1860", "1865"],
       correct: 2
     },
     {
-      question: "Apa strategi utama Belanda untuk menaklukkan Aceh?",
-      answers: ["Blokade laut", "Pembangunan Benteng Marlborough", "Strategi Benteng Stelsel", "Strategi Konsentrasi"],
+      question: "Apa strategi utama yang digunakan oleh Pangeran Antasari dalam perang?",
+      answers: ["Perang gerilya", "Perang terbuka", "Diplomasi", "Blokade ekonomi"],
+      correct: 0
+    },
+    {
+      question: "Apa alasan Pangeran Hidayatullah ditangkap oleh Belanda?",
+      answers: [
+        "Dituduh bersekongkol dengan pemberontak",
+        "Menolak menyerahkan kekuasaan",
+        "Membantu Pangeran Antasari",
+        "Semua jawaban benar"
+      ],
       correct: 3
     },
     {
-      question: "Kapan Teuku Umar gugur dalam perjuangan melawan Belanda?",
-      answers: ["1896", "1899", "1903", "1910"],
-      correct: 1
+      question: "Apa nama benteng yang menjadi pusat pertahanan Belanda di Kalimantan Selatan?",
+      answers: ["Benteng Tatas", "Benteng Bonjol", "Benteng Marlborough", "Benteng Cakranegara"],
+      correct: 0
     },
     {
-      question: "Apa nama karya penting tentang Aceh yang ditulis oleh Snouck Hurgronje?",
-      answers: ["Atjeh Verslag", "De Atjehers", "Aceh dan Belanda", "Aceh Sepanjang Sejarah"],
-      correct: 1
-    },
-    {
-      question: "Apa dampak jangka panjang dari Perang Aceh terhadap rakyat Aceh?",
-      answers: ["Kehancuran ekonomi", "Hilangnya kebudayaan lokal", "Korban jiwa besar-besaran", "Semua jawaban benar"],
+      question: "Apa dampak utama dari Perang Banjar bagi Kerajaan Banjar?",
+      answers: [
+        "Keruntuhan kerajaan",
+        "Penguasaan penuh Belanda atas wilayah Banjar",
+        "Kehilangan sumber daya alam utama",
+        "Semua jawaban benar"
+      ],
       correct: 3
+    },
+    {
+      question: "Perang Banjar berakhir pada tahun berapa?",
+      answers: ["1862", "1865", "1859", "1870"],
+      correct: 1
     }
   ];
-   
-
+  
  
 let currentQuestionIndex = 0;
 let lives = 3;
@@ -173,8 +192,8 @@ function showPopup(message) {
     <div class="popup-content">
       <p>${message}</p>
       <h2>Skor Kamu: ${score}</h2> 
-      <h1>Perang Aceh</h1>
-      <img src="/Aset/aceh.jpg" alt="Bendera Indonesia" class="popup-image" /> <br>
+      <h1>Perang Banjar</h1>
+      <img src="/Aset/banjar.png" alt="Bendera Indonesia" class="popup-image" /> <br>
       <button id="backToDashboard">Kembali ke Dashboard</button>
        <audio id="popup-audio" autoplay>
         <source src="/Aset/gun.mp3" type="audio/mpeg">
